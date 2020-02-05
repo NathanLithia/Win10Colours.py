@@ -5,6 +5,14 @@ from tkinter import colorchooser
 class setting():
     pass
 
+def colorchoosers(defaultcolor):
+    clr = colorchooser.askcolor(title="Select color")
+    if clr == (None, None):
+        print(f"{defaultcolor} -> {defaultcolor}")
+        return defaultcolor
+    print(f"{defaultcolor} -> {clr}")
+    return clr
+
 def _from_rgb(rgb):
     """translates an rgb tuple of int to a tkinter friendly color code
     """
@@ -47,157 +55,219 @@ windows = Tk()
 windows.title("WIN10 COLOR")
 windows.geometry('270x420')
 
-ActiveBorder=Button(windows, text="     ", bg=f"#{setting.ActiveBorder.replace(' ', '')}", fg="red")
+def ActiveBorderdef():
+    ActiveBorder['bg'] = setting.ActiveBorder = colorchoosers(setting.ActiveBorder)
+ActiveBorder=Button(windows, text="     ", bg=f"#{setting.ActiveBorder.replace(' ', '')}", command = ActiveBorderdef)
 ActiveBorder.grid(column=1, row=0)
 ActiveBorderlbl=Label(windows, text="ActiveBorder")
 ActiveBorderlbl.grid(column=2, row=0)
 
-ActiveTitle=Button(windows, text="     ", bg=f"#{setting.ActiveTitle.replace(' ', '')}", fg="red")
+def ActiveTitledef():
+    ActiveTitle['bg'] = setting.ActiveTitle = colorchoosers(setting.ActiveTitle)
+ActiveTitle=Button(windows, text="     ", bg=f"#{setting.ActiveTitle.replace(' ', '')}", command = ActiveTitledef)
 ActiveTitle.grid(column=1, row=1)
 ActiveTitlelbl=Label(windows, text="ActiveTitle")
 ActiveTitlelbl.grid(column=2, row=1)
 
-AppWorkspace=Button(windows, text="     ", bg=f"#{setting.AppWorkspace.replace(' ', '')}", fg="red")
+def AppWorkspacedef():
+    AppWorkspace['bg'] = setting.AppWorkspace = colorchoosers(setting.AppWorkspace)
+AppWorkspace=Button(windows, text="     ", bg=f"#{setting.AppWorkspace.replace(' ', '')}", command = AppWorkspacedef)
 AppWorkspace.grid(column=1, row=2)
 AppWorkspacelbl=Label(windows, text="AppWorkspace")
 AppWorkspacelbl.grid(column=2, row=2)
 
-Background=Button(windows, text="     ", bg=f"#{setting.Background.replace(' ', '')}", fg="red")
+def Backgrounddef():
+    Background['bg'] = setting.Background = colorchoosers(setting.Background)
+Background=Button(windows, text="     ", bg=f"#{setting.Background.replace(' ', '')}", command = Backgrounddef)
 Background.grid(column=1, row=3)
 Backgroundlbl=Label(windows, text="Background")
 Backgroundlbl.grid(column=2, row=3)
 
-ButtonAlternateFace=Button(windows, text="     ", bg=f"#{setting.ButtonAlternateFace.replace(' ', '')}", fg="red")
+def ButtonAlternateFacedef():
+    ButtonAlternateFace['bg'] = setting.ButtonAlternateFace = colorchoosers(setting.ButtonAlternateFace)
+ButtonAlternateFace=Button(windows, text="     ", bg=f"#{setting.ButtonAlternateFace.replace(' ', '')}", command = ButtonAlternateFacedef)
 ButtonAlternateFace.grid(column=1, row=4)
 ButtonAlternateFacelbl=Label(windows, text="ButtonAlternateFace")
 ButtonAlternateFacelbl.grid(column=2, row=4)
 
-ButtonDkShadow=Button(windows, text="     ", bg=f"#{setting.ButtonDkShadow.replace(' ', '')}", fg="red")
+def ButtonDkShadowdef():
+    ButtonDkShadow['bg'] = setting.ButtonDkShadow = colorchoosers(setting.ButtonDkShadow)
+ButtonDkShadow=Button(windows, text="     ", bg=f"#{setting.ButtonDkShadow.replace(' ', '')}", command = ButtonDkShadowdef)
 ButtonDkShadow.grid(column=1, row=5)
 ButtonDkShadowlbl=Label(windows, text="ButtonDkShadow")
 ButtonDkShadowlbl.grid(column=2, row=5)
 
-ButtonFace=Button(windows, text="     ", bg=f"#{setting.ButtonFace.replace(' ', '')}", fg="red")
+def ButtonFacedef():
+    ButtonFace['bg'] = setting.ButtonFace = colorchoosers(setting.ButtonFace)
+ButtonFace=Button(windows, text="     ", bg=f"#{setting.ButtonFace.replace(' ', '')}", command = ButtonFacedef)
 ButtonFace.grid(column=1, row=6)
 ButtonFacelbl=Label(windows, text="ButtonFace")
 ButtonFacelbl.grid(column=2, row=6)
 
-ButtonHilight=Button(windows, text="     ", bg=f"#{setting.ButtonHilight.replace(' ', '')}", fg="red")
+def ButtonHilightdef():
+    ButtonHilight['bg'] = setting.ButtonHilight = colorchoosers(setting.ButtonHilight)
+ButtonHilight=Button(windows, text="     ", bg=f"#{setting.ButtonHilight.replace(' ', '')}", command = ButtonHilightdef)
 ButtonHilight.grid(column=1, row=7)
 ButtonHilightlbl=Label(windows, text="ButtonHilight")
 ButtonHilightlbl.grid(column=2, row=7)
 
-ButtonLight=Button(windows, text="     ", bg=f"#{setting.ButtonLight.replace(' ', '')}", fg="red")
+def ButtonLightdef():
+    ButtonLight['bg'] = setting.ButtonLight = colorchoosers(setting.ButtonLight)
+ButtonLight=Button(windows, text="     ", bg=f"#{setting.ButtonLight.replace(' ', '')}", command = ButtonLightdef)
 ButtonLight.grid(column=1, row=8)
 ButtonLightlbl=Label(windows, text="ButtonLight")
 ButtonLightlbl.grid(column=2, row=8)
 
-ButtonShadow=Button(windows, text="     ", bg=f"#{setting.ButtonShadow.replace(' ', '')}", fg="red")
+def ButtonShadowdef():
+    ButtonShadow['bg'] = setting.ButtonShadow = colorchoosers(setting.ButtonShadow)
+ButtonShadow=Button(windows, text="     ", bg=f"#{setting.ButtonShadow.replace(' ', '')}", command = ButtonShadowdef)
 ButtonShadow.grid(column=1, row=9)
 ButtonShadowlbl=Label(windows, text="ButtonShadow")
 ButtonShadowlbl.grid(column=2, row=9)
 
-ButtonText=Button(windows, text="     ", bg=f"#{setting.ButtonText.replace(' ', '')}", fg="red")
+def ButtonTextdef():
+    ButtonText['bg'] = setting.ButtonText = colorchoosers(setting.ButtonText)
+ButtonText=Button(windows, text="     ", bg=f"#{setting.ButtonText.replace(' ', '')}", command = ButtonTextdef)
 ButtonText.grid(column=1, row=10)
 ButtonTextlbl=Label(windows, text="ButtonText")
 ButtonTextlbl.grid(column=2, row=10)
 
-GradientActiveTitle=Button(windows, text="     ", bg=f"#{setting.GradientActiveTitle.replace(' ', '')}", fg="red")
+def GradientActiveTitledef():
+    GradientActiveTitle['bg'] = setting.GradientActiveTitle = colorchoosers(setting.GradientActiveTitle)
+GradientActiveTitle=Button(windows, text="     ", bg=f"#{setting.GradientActiveTitle.replace(' ', '')}", command = GradientActiveTitledef)
 GradientActiveTitle.grid(column=1, row=11)
 GradientActiveTitlelbl=Label(windows, text="GradientActiveTitle")
 GradientActiveTitlelbl.grid(column=2, row=11)
 
-GradientInactiveTitle=Button(windows, text="     ", bg=f"#{setting.GradientInactiveTitle.replace(' ', '')}", fg="red")
+def GradientInactiveTitledef():
+    GradientInactiveTitle['bg'] = setting.GradientInactiveTitle = colorchoosers(setting.GradientInactiveTitle)
+GradientInactiveTitle=Button(windows, text="     ", bg=f"#{setting.GradientInactiveTitle.replace(' ', '')}", command = GradientInactiveTitledef)
 GradientInactiveTitle.grid(column=1, row=12)
 GradientInactiveTitlelbl=Label(windows, text="GradientInactiveTitle")
 GradientInactiveTitlelbl.grid(column=2, row=12)
 
-GrayText=Button(windows, text="     ", bg=f"#{setting.GrayText.replace(' ', '')}", fg="red")
+def GrayTextdef():
+    GrayText['bg'] = setting.GrayText = colorchoosers(setting.GrayText)
+GrayText=Button(windows, text="     ", bg=f"#{setting.GrayText.replace(' ', '')}", command = GrayTextdef)
 GrayText.grid(column=1, row=13)
 GrayTextlbl=Label(windows, text="GrayText")
 GrayTextlbl.grid(column=2, row=13)
 
-Hilight=Button(windows, text="     ", bg=f"#{setting.Hilight.replace(' ', '')}", fg="red")
+def Hilightdef():
+    Hilight['bg'] = setting.Hilight = colorchoosers(setting.Hilight)
+Hilight=Button(windows, text="     ", bg=f"#{setting.Hilight.replace(' ', '')}", command = Hilightdef)
 Hilight.grid(column=1, row=14)
 Hilightlbl=Label(windows, text="Hilight")
 Hilightlbl.grid(column=2, row=14)
 
-HilightText=Button(windows, text="     ", bg=f"#{setting.HilightText.replace(' ', '')}", fg="red")
+def HilightTextdef():
+    HilightText['bg'] = setting.HilightText = colorchoosers(setting.HilightText)
+HilightText=Button(windows, text="     ", bg=f"#{setting.HilightText.replace(' ', '')}", command = HilightTextdef)
 HilightText.grid(column=3, row=0)
 HilightTextlbl=Label(windows, text="HilightText")
 HilightTextlbl.grid(column=4, row=0)
 
-HotTrackingColor=Button(windows, text="     ", bg=f"#{setting.HotTrackingColor.replace(' ', '')}", fg="red")
+def HotTrackingColordef():
+    HotTrackingColor['bg'] = setting.HotTrackingColor = colorchoosers(setting.HotTrackingColor)
+HotTrackingColor=Button(windows, text="     ", bg=f"#{setting.HotTrackingColor.replace(' ', '')}", command = HotTrackingColordef)
 HotTrackingColor.grid(column=3, row=1)
 HotTrackingColorlbl=Label(windows, text="HotTrackingColor")
 HotTrackingColorlbl.grid(column=4, row=1)
 
-InactiveBorder=Button(windows, text="     ", bg=f"#{setting.InactiveBorder.replace(' ', '')}", fg="red")
+def InactiveBorderdef():
+    InactiveBorder['bg'] = setting.InactiveBorder = colorchoosers(setting.InactiveBorder)
+InactiveBorder=Button(windows, text="     ", bg=f"#{setting.InactiveBorder.replace(' ', '')}", command = InactiveBorderdef)
 InactiveBorder.grid(column=3, row=2)
 InactiveBorderlbl=Label(windows, text="InactiveBorder")
 InactiveBorderlbl.grid(column=4, row=2)
 
-InactiveTitle=Button(windows, text="     ", bg=f"#{setting.InactiveTitle.replace(' ', '')}", fg="red")
+def InactiveTitledef():
+    InactiveTitle['bg'] = setting.InactiveTitle = colorchoosers(setting.InactiveTitle)
+InactiveTitle=Button(windows, text="     ", bg=f"#{setting.InactiveTitle.replace(' ', '')}", command = InactiveTitledef)
 InactiveTitle.grid(column=3, row=3)
 InactiveTitlelbl=Label(windows, text="InactiveTitle")
 InactiveTitlelbl.grid(column=4, row=3)
 
-InactiveTitleText=Button(windows, text="     ", bg=f"#{setting.InactiveTitleText.replace(' ', '')}", fg="red")
+def InactiveTitleTextdef():
+    InactiveTitleText['bg'] = setting.InactiveTitleText = colorchoosers(setting.InactiveTitleText)
+InactiveTitleText=Button(windows, text="     ", bg=f"#{setting.InactiveTitleText.replace(' ', '')}", command = InactiveTitleTextdef)
 InactiveTitleText.grid(column=3, row=4)
 InactiveTitleTextlbl=Label(windows, text="InactiveTitleText")
 InactiveTitleTextlbl.grid(column=4, row=4)
 
-InfoText=Button(windows, text="     ", bg=f"#{setting.InfoText.replace(' ', '')}", fg="red")
+def InfoTextdef():
+    InfoText['bg'] = setting.InfoText = colorchoosers(setting.InfoText)
+InfoText=Button(windows, text="     ", bg=f"#{setting.InfoText.replace(' ', '')}", command = InfoTextdef)
 InfoText.grid(column=3, row=5)
 InfoTextlbl=Label(windows, text="InfoText")
 InfoTextlbl.grid(column=4, row=5)
 
-Menu=Button(windows, text="     ", bg=f"#{setting.Menu.replace(' ', '')}", fg="red")
+def Buttondef():
+    Menu['bg'] = setting.Button = colorchoosers(setting.Button)
+Menu=Button(windows, text="     ", bg=f"#{setting.Menu.replace(' ', '')}", command = Buttondef)
 Menu.grid(column=3, row=6)
 Menulbl=Label(windows, text="Menu")
 Menulbl.grid(column=4, row=6)
 
-MenuBar=Button(windows, text="     ", bg=f"#{setting.MenuBar.replace(' ', '')}", fg="red")
+def MenuBardef():
+    MenuBar['bg'] = setting.MenuBar = colorchoosers(setting.MenuBar)
+MenuBar=Button(windows, text="     ", bg=f"#{setting.MenuBar.replace(' ', '')}", command = MenuBardef)
 MenuBar.grid(column=3, row=7)
 MenuBarlbl=Label(windows, text="MenuBar")
 MenuBarlbl.grid(column=4, row=7)
 
-MenuHilight=Button(windows, text="     ", bg=f"#{setting.MenuHilight.replace(' ', '')}", fg="red")
+def MenuHilightdef():
+    MenuHilight['bg'] = setting.MenuHilight = colorchoosers(setting.MenuHilight)
+MenuHilight=Button(windows, text="     ", bg=f"#{setting.MenuHilight.replace(' ', '')}", command = MenuHilightdef)
 MenuHilight.grid(column=3, row=8)
 MenuHilightlbl=Label(windows, text="MenuHilight")
 MenuHilightlbl.grid(column=4, row=8)
 
-MenuText=Button(windows, text="     ", bg=f"#{setting.MenuText.replace(' ', '')}", fg="red")
+def MenuTextdef():
+    MenuText['bg'] = setting.MenuText = colorchoosers(setting.MenuText)
+MenuText=Button(windows, text="     ", bg=f"#{setting.MenuText.replace(' ', '')}", command = MenuTextdef)
 MenuText.grid(column=3, row=9)
 MenuTextlbl=Label(windows, text="MenuText")
 MenuTextlbl.grid(column=4, row=9)
 
-Scrollbar=Button(windows, text="     ", bg=f"#{setting.Scrollbar.replace(' ', '')}", fg="red")
+def Scrollbardef():
+    Scrollbar['bg'] = setting.Scrollbar = colorchoosers(setting.Scrollbar)
+Scrollbar=Button(windows, text="     ", bg=f"#{setting.Scrollbar.replace(' ', '')}", command = Scrollbardef)
 Scrollbar.grid(column=3, row=10)
 Scrollbarlbl=Label(windows, text="Scrollbar")
 Scrollbarlbl.grid(column=4, row=10)
 
-TitleText=Button(windows, text="     ", bg=f"#{setting.TitleText.replace(' ', '')}", fg="red")
+def TitleTextdef():
+    TitleText['bg'] = setting.TitleText = colorchoosers(setting.TitleText)
+TitleText=Button(windows, text="     ", bg=f"#{setting.TitleText.replace(' ', '')}", command = TitleTextdef)
 TitleText.grid(column=3, row=11)
 TitleTextlbl=Label(windows, text="TitleText")
 TitleTextlbl.grid(column=4, row=11)
 
-Window=Button(windows, text="     ", bg=f"#{setting.Window.replace(' ', '')}", fg="red")
+def Windowdef():
+    Window['bg'] = setting.Window = colorchoosers(setting.Window)
+Window=Button(windows, text="     ", bg=f"#{setting.Window.replace(' ', '')}", command = Windowdef)
 Window.grid(column=3, row=12)
 Windowlbl=Label(windows, text="Window")
 Windowlbl.grid(column=4, row=12)
 
-WindowFrame=Button(windows, text="     ", bg=f"#{setting.WindowFrame.replace(' ', '')}", fg="red")
+def WindowFramedef():
+    WindowFrame['bg'] = setting.WindowFrame = colorchoosers(setting.WindowFrame)
+WindowFrame=Button(windows, text="     ", bg=f"#{setting.WindowFrame.replace(' ', '')}", command = WindowFramedef)
 WindowFrame.grid(column=3, row=13)
 lbl=Label(windows, text="WindowFrame")
 lbl.grid(column=4, row=13)
 
-WindowText=Button(windows, text="     ", bg=f"#{setting.WindowText.replace(' ', '')}", fg="red")
+def WindowTextdef():
+    WindowText['bg'] = setting.WindowText = colorchoosers(setting.WindowText)
+WindowText=Button(windows, text="     ", bg=f"#{setting.WindowText.replace(' ', '')}", command = WindowTextdef)
 WindowText.grid(column=3, row=14)
 lbl=Label(windows, text="WindowText")
 lbl.grid(column=4, row=14)
 
-Close=Button(windows, text="Close")
+def Closedef():
+    exit()
+Close=Button(windows, text="Close", command = Closedef)
 Close.grid(column=2, row=15)
 
 Create=Button(windows, text="Create")
@@ -208,7 +278,3 @@ print(setting.WindowText)
 #windows.configure(background='black')
 windows.mainloop()
 
-def colorchoosers(inputs):
-    clr = colorchooser.askcolor(title="Select color")
-    print(clr)
-    return clr
